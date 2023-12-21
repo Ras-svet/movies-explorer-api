@@ -30,7 +30,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.use('/api', routes);
+app.use('/', routes);
 
 app.use(errorLogger);
 app.use(errors());
