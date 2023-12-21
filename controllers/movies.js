@@ -5,8 +5,14 @@ const CastError = require('../errors/cast-error');
 const ForbiddenError = require('../errors/forbidden-error');
 
 module.exports.getMovies = (req, res, next) => {
-  Movie.find({})
-    .then((movies) => res.status(200).send(movies))
+  const owner = req.user._id;
+  Movie.find({ owner })
+    .then((movies) => {
+      if (!movies) {
+        throw new NotFoundError('Фильмы не найдены');
+      }
+      res.status(200).send(movies);
+    })
     .catch((err) => next(err));
 };
 
