@@ -93,17 +93,11 @@ Backend https://api.rasmovie.nomoredomainsmonster.ru/
 npm install
 ```
 
-2. Запустить MongoDB:
+2. Запустить в режиме разработки:</br>
 
 ```sh
-npm run mongod
-```
-
-3. Запустить в режиме разработки:</br>
-
-```sh
-npm run start  — запускает сервер
+npm run start — запускает сервер
 npm run dev — запускает сервер с hot-reload
 ```
 
-Если все прошло успешно, проект будет запущен на `http://localhost:3000`
+Проект будет запущен на `http://localhost:3000`
