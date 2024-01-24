@@ -10,7 +10,7 @@ const globalError = require('./middlewares/globalError');
 require('dotenv').config();
 
 const app = express();
-const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
+const { PORT = 3001, DB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,5 +37,5 @@ app.use(errors());
 app.use(globalError);
 
 app.listen(PORT, () => {
-  console.log('App listening on port 3000');
+  console.log('App listening on port 3001');
 });
